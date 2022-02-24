@@ -13,7 +13,7 @@ inventory file on Ansible Engine.
  **$ ansible all -m ping**
 
 ## a) Password Authentication
-=================================
+
 - Create same user(ansible) across all servers and provide
 password for all users.
 
@@ -30,16 +30,16 @@ password for all users.
  **$ sudo systemctl restart sshd.service**
 - Test connectivity by providing a -k option to be prompted to enter the SSH password.
 
-  **$ ansible all -m ping -k**
+ **$ ansible all -m ping -k**
 
 - By default, Ansible tries to connect to the nodes as a remote user with the same name as your current system user, using its corresponding SSH keypair.
 
 - To connect as a different remote user, append the command with the -u flag and the name of the intended user:
 
-  **$ ansible all -m ping -u sammy**
+ **$ ansible all -m ping -u sammy**
 
 - If the remote user has a password, use -k option to be prompted to enter the SSH password.\
-  **$ ansible all -m ping -u sammy -k**
+ **$ ansible all -m ping -u sammy -k**
 
  **Host and group variables**
 - If were run the ping command on all servers, we will get permission denied on the servers that need a password to authenticate.
